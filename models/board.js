@@ -1,0 +1,35 @@
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const board = sequelize.define('board', {
+    board_num: {
+        type:DataTypes.INTEGER,
+        primaryKey:true,
+        allowNull:false,
+        autoIncrement: true
+    },
+    board_uid:{
+      type:DataTypes.STRING,
+      allowNull:false,
+    },
+    board_nickname:{
+      type:DataTypes.STRING(20),
+      allowNull:false
+    },
+    board_content:{
+      type:DataTypes.STRING(255),
+      allowNull:false
+    },
+    board_hit:{
+      type:DataTypes.STRING(10),
+      allowNull:false
+    },
+  
+  }, {
+
+    tableName:"board"
+  });
+  board.associate = function(models) {
+    // associations can be defined here
+  };
+  return board;
+};

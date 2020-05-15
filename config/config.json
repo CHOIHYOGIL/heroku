@@ -1,0 +1,22 @@
+{
+  "development": {
+    "username": "root",
+    "password": "rkdtj21038!",
+    "database": "graduation",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "logging":false
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "logging":false
+  },
+  "production": {
+    "use_env_viraible" :"mysql://z4cpyrvjkoevuacv:rzepbbr176cikydo@fugfonv8odxxolj8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/x6szii5w99viyy4q"
+   , "dialect": "mysql"
+  }
+}

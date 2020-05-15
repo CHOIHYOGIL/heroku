@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ 
+  
+ 
+  </head>  
+  <body>
+    
+      
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyA5I8jNkgH19JGRXPVz523OCAQHGjAxSYw",
+        authDomain: "graduation-f5a8d.firebaseapp.com",
+        databaseURL: "https://graduation-f5a8d.firebaseio.com",
+        projectId: "graduation-f5a8d",
+        storageBucket: "graduation-f5a8d.appspot.com",
+        messagingSenderId: "767170513426",
+        appId: "1:767170513426:web:3926482e507c84c72d26cb",
+        measurementId: "G-J08EVYWLEL"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+  
+
+      var provider= new firebase.auth.GoogleAuthProvider();
+      console.log(provider)
+
+firebase.auth().signInWithPopup(provider).then(function(result){
+  console.log(result.credential)
+    var token=result.credential.accessToken;
+    var user=result.user;
+    console.log("HI")
+    console.log(user)
+    console.log("token:"+token)
+}).catch(function(error){
+    var errorCode=error.code;
+    var errorMessage=error.meessage;
+    var email=error.email;
+    var credential =error.credential;
+})
+      
+    </script>
+    
+
+
+</body>
+
+</html>
+
+
