@@ -16,11 +16,7 @@
     "logging":false
   },
   "production": {
-    "username": "bad5c25e6822dd",
-    "password": "d4a047fa",
-    "database": "heroku_5d8e9ce816cabda",
-    "host": "us-cdbr-east-06.cleardb.net",
-    "dialect": "mysql",
-    "logging":false
+   "use_env_variable" :"",
+   "dialect":"mysql"
   }
 }
