@@ -31,6 +31,8 @@ app.use(express.static('public'));
 
 
 
+
+
 //app.use('/login',login)
 app.use('/user_fish',user_fish);
 app.use('/user_info',user_info);
