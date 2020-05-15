@@ -16,7 +16,11 @@
     "logging":false
   },
   "production": {
-    "use_env_viraible" :"mysql://z4cpyrvjkoevuacv:rzepbbr176cikydo@fugfonv8odxxolj8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/x6szii5w99viyy4q"
-   , "dialect": "mysql"
+    "username": "bad5c25e6822dd",
+    "password": "d4a047fa",
+    "database": "heroku_5d8e9ce816cabda",
+    "host": "us-cdbr-east-06.cleardb.net",
+    "dialect": "mysql",
+    "logging":false
   }
 }
