@@ -10,7 +10,7 @@ require('dotenv').config();
 const { sequelize } = require('./models');
 
 
-var admin = require("firebase-admin");
+var admin = require('firebase-admin');
 var serviceAccount = require("./graduation-f5a8d-firebase-adminsdk-3a1to-44789ec1c4.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
