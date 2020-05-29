@@ -23,5 +23,6 @@ const { firebaseAuth } = require('../middleware')
   
   
   
+router.get('/', service.getAllData) 
    
 module.exports = router

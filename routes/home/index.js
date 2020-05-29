@@ -5,7 +5,7 @@ const service = require('./service')
 const { firebaseAuth } = require('../middleware')
 router
     
-    .get('/',service.getShow)
+    .get('/',service.getHome)
     
    
 module.exports = router

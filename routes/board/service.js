@@ -31,17 +31,16 @@ function getWriteFeed(req, res) {
 }
 
 
-// function getUid(uid){
+function getAllData(req,res){
 
-     
-//     userCheck(uid)
-//     .then(userRecord)
-//     {
-//         console.log("userRecord"+userRecord)
-//     }
-// }
+  var page=req.query.page
+  repository.getUseralldata(page)
+  .then(result=>{
+    res.json(result)
+  })
+}
 
 exports.getWriteFeed = getWriteFeed
 
-
+exports.getAllData=getAllData
 

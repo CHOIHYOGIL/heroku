@@ -15,13 +15,13 @@ function getUseralldata(page) {
     offset1 = 20 * (page - 1);
   }
   return board.findAll({
-    order: [['id', 'desc']],
-    include: [{
-      model: Users,
-      attributes: ['name', 'birth', 'gender', 'createdAt']
-      //  where:{user_uid :Sequelize.col('users.uid')}
-    }],
-    attributes: ['id', 'content', 'createdAt'],
+    order: [['board_num', 'desc']],
+    // include: [{
+    //   model: users,
+    //   attributes: ['user_id', 'user_name', 'user_nickname', 'user_password','user_email','user_phone','createdAt']
+    //   //  where:{user_uid :Sequelize.col('users.uid')}
+    // }],
+    attributes: ['board_num', 'board_nickname', 'board_content','board_hit','createdAt'],
     limit: 20,
     offset: offset1
 

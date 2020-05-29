@@ -49,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
       tableName:"users"
   });
   users.associate = function(models) {
-    users.hasMany(models.board, { foreignKey: 'board_nickname' })
+    // users.hasMany(models.board, { foreignKey: 'board_num' })
   };
   return users;
 };
