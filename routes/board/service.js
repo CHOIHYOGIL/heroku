@@ -3,15 +3,21 @@ const user_info=require('../../models');
 const repository = require('./repository')
 
 
+const { userCheck } = require('../user_fish/firebase');
 
 function getWriteFeed(req, res) {
-     
-    let content =req.body.content;
-    let user= req.user;
 
+   
+    let title=req.body.title;
+    let uid=req.body.uid;
+    let content =req.body.content;
+    let email=req.body.email
+    console.log("board here")
+    console.log(req.body.email)
     
-  if (user) {
-    repository.writeBoard(user, content)
+    
+  if (uid) {
+    repository.writeBoard(uid, email,  content, title)
     .then(response => {
       res.json({ status: "ok", message: "글작성 완료" })
     })
@@ -23,6 +29,17 @@ function getWriteFeed(req, res) {
   }
         
 }
+
+
+// function getUid(uid){
+
+     
+//     userCheck(uid)
+//     .then(userRecord)
+//     {
+//         console.log("userRecord"+userRecord)
+//     }
+// }
 
 exports.getWriteFeed = getWriteFeed
 

@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     tableName:"board"
   });
   board.associate = function(models) {
-    // associations can be defined here
+    board.belongsTo(models.users, {foreignKey:'board_nickname', targetKey: 'user_nickname'})
   };
   return board;
 };

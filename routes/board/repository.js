@@ -1,7 +1,7 @@
 
 
 var qs = require('querystring');
-const { Users, Board } = require('../../models')
+const { users, board } = require('../../models')
 const { Sequelize } = require("sequelize");
 var moment = require('moment');
 require('moment-timezone');
@@ -14,7 +14,7 @@ function getUseralldata(page) {
   if (page > 1) {
     offset1 = 20 * (page - 1);
   }
-  return Board.findAll({
+  return board.findAll({
     order: [['id', 'desc']],
     include: [{
       model: Users,
@@ -30,7 +30,7 @@ function getUseralldata(page) {
 }
 function uidFindOrCreate(uid) {
 
-  return Users.findOrCreate({
+  return users.findOrCreate({
     where: {
       uid: uid
 
@@ -39,7 +39,7 @@ function uidFindOrCreate(uid) {
 }
 
 function getUseridbyUid(uid) {
-  return Users.findAll({
+  return users.findAll({
     where: {
       uid: uid
     },
@@ -47,12 +47,16 @@ function getUseridbyUid(uid) {
   })
 }
 
-function writeBoard(user, content) {
+function writeBoard(uid,email,content,title) {
 
-  return Board.create({
-    user_id: user.id,
-    user_uid: user.uid,
-    content: content
+    console.log("writebOARD")
+
+  return board.create({
+
+      board_uid: uid,
+      board_nickname:email,
+    board_hit: title,
+    board_content: content
   })
 
 }
@@ -60,7 +64,7 @@ function writeBoard(user, content) {
 
 
 function getUsercontent() {
-  return Board.findAll({
+  return board.findAll({
     attributes: ['content']
   })
 }
