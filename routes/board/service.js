@@ -34,6 +34,7 @@ function getWriteFeed(req, res) {
 function getAllData(req,res){
 
   var page=req.query.page
+  console.log(page)
   repository.getUseralldata(page)
   .then(result=>{
     res.json(result)
