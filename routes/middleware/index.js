@@ -28,21 +28,13 @@ function firebaseAuth(req, res, next) {
           
     
         })
+     
     
         .catch(e => {
     
             res.json(e)
         })
-        // authCheck1(String(token))
-        // .then(decodedToken => {
-        //     let uid=decodedToken.uid;
-        //     console.log("authCheck 22222 ")
-       
-        //     console.log(uid)
-        //  //    return board_Repository.writeBoard(uid,req.body)
-        //  return board_Repository.writeBoard(uid,req.body)
     
-        // })
     
         // .catch(e => {
     

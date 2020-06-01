@@ -2,12 +2,12 @@ var qs = require('querystring');
 const {  users} = require('../../models')
 const board_Repository= require('../board/repository')
 
-function getInfo(uid) {
+function getInfo(email) {
 
   console.log("getInfo")
-  return Users.findAll({
+  return users.findAll({
       where: {
-          user_uid: uid
+          user_email: email
       }
   })
 }

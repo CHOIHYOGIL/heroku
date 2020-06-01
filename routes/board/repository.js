@@ -7,6 +7,7 @@ var moment = require('moment');
 require('moment-timezone');
 moment.tz.setDefault("Asia/Seoul");
 
+const { Op } = require("sequelize");
 
 
 function getUseralldata(page) {
@@ -28,24 +29,7 @@ function getUseralldata(page) {
   });
 
 }
-function uidFindOrCreate(uid) {
 
-  return users.findOrCreate({
-    where: {
-      uid: uid
-
-    }
-  })
-}
-
-function getUseridbyUid(uid) {
-  return users.findAll({
-    where: {
-      uid: uid
-    },
-    attributes: ['id']
-  })
-}
 
 function writeBoard(uid,email,content,title) {
 
@@ -63,9 +47,54 @@ function writeBoard(uid,email,content,title) {
 
 
 
-function getUsercontent() {
+function getUserFeed(page,email,content) {
+let offset1=0;
+
+console.log(email)
+console.log(content)
+  let param={}
+
+    if(page>1){
+      offset1=20*(page)-1
+    }
+
+
+   
+      if(content!=undefined){
+        param={
+          board_content:{
+            [Op.like]:"%"+content+"%"
+          },
+        
+        }
+        if(email!=undefined){
+          param={
+            board_content:{
+              [Op.like]:"%"+content+"%"
+            },
+     
+            board_nickname:{
+              [Op.like]:"%"+email+"%"
+            }
+          }
+        }
+      }else if(email!=undefined){
+        param={
+        
+     
+          board_nickname:{
+            [Op.like]:"%"+email+"%"
+          }
+        }
+      }
+  
+
+  
   return board.findAll({
-    attributes: ['content']
+    where : param,
+    limite:20,
+    offset:offset1,
+    order:[['createdAt','ASC']]
   })
 }
 
@@ -82,10 +111,10 @@ function getUserInfo(uid) {
 
 
 exports.getUseralldata = getUseralldata
-exports.uidFindOrCreate = uidFindOrCreate
+
 exports.getUserInfo = getUserInfo
 exports.writeBoard = writeBoard
-exports.getUsercontent = getUsercontent
+exports.getUserFeed = getUserFeed
 
 
 
