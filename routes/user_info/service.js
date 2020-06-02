@@ -105,9 +105,9 @@ function getItemDetail(req, res) {
   repository.getItem(email)
     .then(result => {
       res.json({
-        nickname:result
-      }
-        )
+        my_nickname:result
+      
+      })
     })
 
 }

@@ -34,10 +34,12 @@ function userFindOrCreate(uid, req) {
  }
  function getItem(email) {
    
-  return users.findOne({
+  return users.findAll({
 
-    attributes:['user_nickname'],
-    where:{user_email:email}
+    attributes:['user_nickname','user_email'],
+    where:{
+      user_email:email
+    }
   });
 
 }
