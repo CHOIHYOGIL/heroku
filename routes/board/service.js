@@ -48,8 +48,9 @@ function getUserContent(req, res) {
 
   var page=req.query.page
  var email=req.query.email
- var content=req.query.content
- repository.getUserFeed(page,email,content)
+
+ console.log("email :"+email)
+ repository.getUserFeed(page,email)
  .then(result=>{
    res.json({
     my_board:result

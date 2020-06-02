@@ -48,61 +48,36 @@ function writeBoard(uid,nickname,content,title,email) {
 
 
 
-function getUserFeed(page,email,content) {
+function getUserFeed(page,email) {
 let offset1=0;
 
-console.log(email)
-console.log(content)
-  let param={}
+
+
+  
 
     if(page>1){
       offset1=20*(page)-1
     }
 
 
-   
-      if(content!=undefined){
-        param={
-          board_content:{
-            [Op.like]:"%"+content+"%"
-          },
-        
-        }
-        if(email!=undefined){
-          param={
-            board_content:{
-              [Op.like]:"%"+content+"%"
-            },
+   if(email!=undefined){
+       
+    console.log(email)
      
-            board_nickname:{
-              attributes:['board_nickname'],
-    where:{
-      board_email:email
-    }
-            }
-          }
-        }
-      }else if(nickname!=undefined){
-        param={
-        
-     
-          board_nickname:{
+         return board.findAll({
             attributes:['board_nickname'],
-  where:{
-    board_email:email
-  }
-}
-        }
+            where:{
+              board_email:{ [Op.like]:"%"+email+"%"}
+              
+            },
+          
+          })
+        
       }
   
 
   
-  return board.findAll({
-    where : param,
-    limite:20,
-    offset:offset1,
-    order:[['createdAt','ASC']]
-  })
+
 }
 
 function getUserInfo(uid) {
