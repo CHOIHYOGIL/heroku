@@ -52,28 +52,24 @@ function getUserFeed(page,email) {
 let offset1=0;
 
 
-
-  
-
     if(page>1){
       offset1=20*(page)-1
     }
 
 
-   if(email!=undefined){
        
     console.log(email)
      
          return board.findAll({
             attributes:['board_nickname'],
             where:{
-              board_email:{ [Op.like]:"%"+email+"%"}
+              board_email:email
               
             },
           
           })
         
-      }
+      
   
 
   
