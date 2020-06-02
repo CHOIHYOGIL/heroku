@@ -31,7 +31,7 @@ function getUseralldata(page) {
 }
 
 
-function writeBoard(uid,nickname,content,title) {
+function writeBoard(uid,nickname,content,title,email) {
 
     console.log("writebOARD")
 
@@ -40,7 +40,8 @@ function writeBoard(uid,nickname,content,title) {
       board_uid: uid,
       board_title: title,
       board_nickname:nickname,
-    board_content: content
+    board_content: content,
+    board_email:email
   })
 
 }

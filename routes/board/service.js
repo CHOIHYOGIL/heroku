@@ -7,7 +7,7 @@ const { userCheck } = require('../user_fish/firebase');
 
 function getWriteFeed(req, res) {
 
-   
+   let email=req.body.email
     let title=req.body.title;
     let uid=req.body.uid;
     let content =req.body.content;
@@ -17,7 +17,7 @@ function getWriteFeed(req, res) {
     
     
   if (uid) {
-    repository.writeBoard(uid, nickname,  content, title)
+    repository.writeBoard(uid, nickname,  content, title,email)
     .then(response => {
       res.json({ status: "ok", message: "글작성 완료" })
     })
