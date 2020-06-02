@@ -87,10 +87,13 @@ firebase
 
 function getProfile(req, res) {
   let email=req.query.email
+  console.log(email)
 repository.getInfo(email)
 .then(result=>{
   console.log("result : "+result)
-  res.json(result)
+  res.json({
+    my_profile:result
+  })
 })
 
 }

@@ -37,7 +37,10 @@ function getAllData(req,res){
   console.log(page)
   repository.getUseralldata(page)
   .then(result=>{
-    res.json(result)
+    res.json({
+      board:result
+   
+    })
   })
 }
 
@@ -48,7 +51,9 @@ function getUserContent(req, res) {
  var content=req.query.content
  repository.getUserFeed(page,email,content)
  .then(result=>{
-   res.json(result)
+   res.json({
+    my_board:result
+   })
  })
 
 }
