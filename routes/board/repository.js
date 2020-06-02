@@ -47,10 +47,10 @@ function writeBoard(uid,nickname,content,title) {
 
 
 
-function getUserFeed(page,email,content) {
+function getUserFeed(page,nickname,content) {
 let offset1=0;
 
-console.log(email)
+console.log(nickname)
 console.log(content)
   let param={}
 
@@ -67,23 +67,23 @@ console.log(content)
           },
         
         }
-        if(email!=undefined){
+        if(nickname!=undefined){
           param={
             board_content:{
               [Op.like]:"%"+content+"%"
             },
      
             board_nickname:{
-              [Op.like]:"%"+email+"%"
+              [Op.like]:"%"+nickname+"%"
             }
           }
         }
-      }else if(email!=undefined){
+      }else if(nickname!=undefined){
         param={
         
      
-          board_nickname:{
-            [Op.like]:"%"+email+"%"
+          board:{
+            [Op.like]:"%"+nickname+"%"
           }
         }
       }

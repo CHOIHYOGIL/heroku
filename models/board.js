@@ -13,10 +13,12 @@ module.exports = (sequelize, DataTypes) => {
     },    board_title:{
       type:DataTypes.STRING(10),
       allowNull:false
-    },    board_content:{
+    },    
+    board_content:{
       type:DataTypes.STRING(255),
       allowNull:false
     },
+    
     board_nickname:{
       type:DataTypes.STRING(20),
       allowNull:false
