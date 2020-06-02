@@ -63,7 +63,9 @@ let offset1=0;
          return board.findAll({
             attributes:['board_nickname'],
             where:{
-              board_email:email
+              board_email:{
+                [Op.like]:"%"+email+"%"
+              }
               
             },
           
