@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING(255),
       allowNull:false
     },
-    board_hit:{
+    board_title:{
       type:DataTypes.STRING(10),
       allowNull:false
     },

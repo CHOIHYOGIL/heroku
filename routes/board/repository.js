@@ -38,8 +38,9 @@ function writeBoard(uid,email,content,title) {
   return board.create({
 
       board_uid: uid,
+      board_title: title,
       board_nickname:email,
-    board_hit: title,
+   
     board_content: content
   })
 
