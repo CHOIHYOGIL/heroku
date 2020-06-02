@@ -11,13 +11,13 @@ function getWriteFeed(req, res) {
     let title=req.body.title;
     let uid=req.body.uid;
     let content =req.body.content;
-    let email=req.body.email
+    let nickname=req.body.nickname
     console.log("board here")
-    console.log(req.body.email)
+    console.log(req.body.nickname)
     
     
   if (uid) {
-    repository.writeBoard(uid, email,  content, title)
+    repository.writeBoard(uid, nickname,  content, title)
     .then(response => {
       res.json({ status: "ok", message: "글작성 완료" })
     })

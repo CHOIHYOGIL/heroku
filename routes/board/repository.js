@@ -31,7 +31,7 @@ function getUseralldata(page) {
 }
 
 
-function writeBoard(uid,email,content,title) {
+function writeBoard(uid,nickname,content,title) {
 
     console.log("writebOARD")
 
@@ -39,8 +39,7 @@ function writeBoard(uid,email,content,title) {
 
       board_uid: uid,
       board_title: title,
-      board_nickname:email,
-   
+      board_nickname:nickname,
     board_content: content
   })
 
@@ -48,10 +47,10 @@ function writeBoard(uid,email,content,title) {
 
 
 
-function getUserFeed(page,email,content) {
+function getUserFeed(page,nickname,content) {
 let offset1=0;
 
-console.log(email)
+console.log(nickname)
 console.log(content)
   let param={}
 
@@ -68,23 +67,23 @@ console.log(content)
           },
         
         }
-        if(email!=undefined){
+        if(nickname!=undefined){
           param={
             board_content:{
               [Op.like]:"%"+content+"%"
             },
      
             board_nickname:{
-              [Op.like]:"%"+email+"%"
+              [Op.like]:"%"+nickname+"%"
             }
           }
         }
-      }else if(email!=undefined){
+      }else if(nickname!=undefined){
         param={
         
      
           board_nickname:{
-            [Op.like]:"%"+email+"%"
+            [Op.like]:"%"+nickname+"%"
           }
         }
       }
