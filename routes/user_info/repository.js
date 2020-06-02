@@ -36,7 +36,7 @@ function userFindOrCreate(uid, req) {
    
   return users.findAll({
 
-    attributes:['user_nickname','user_email'],
+    attributes:['user_nickname'],
     where:{
       user_email:email
     }
