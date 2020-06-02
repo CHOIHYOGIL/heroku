@@ -47,9 +47,9 @@ function getAllData(req,res){
 function getUserContent(req, res) {
 
   var page=req.query.page
- var nickname=req.query.nickname
+ var email=req.query.email
  var content=req.query.content
- repository.getUserFeed(page,nickname,content)
+ repository.getUserFeed(page,email,content)
  .then(result=>{
    res.json({
     my_board:result
