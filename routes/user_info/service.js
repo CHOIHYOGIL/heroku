@@ -98,8 +98,20 @@ repository.getInfo(email)
 
 }
 
+function getItemDetail(req, res) {
+  var email = req.query.email
 
+  console.log(email)
+  repository.getItem(email)
+    .then(result => {
+      res.json({
+        nickname:result
+      }
+        )
+    })
+
+}
 
 exports.getProfile=getProfile;
-
+exports.getItemDetail=getItemDetail
 exports.loginprocess=loginprocess

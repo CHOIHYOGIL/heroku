@@ -33,9 +33,18 @@ function userFindOrCreate(uid, req) {
    })
 
  }
+ function getItem(email) {
+   
+  return users.findOne({
+
+    attributes:['user_nickname'],
+    where:{user_email:email}
+  });
+
+}
 
  exports.userFindOrCreate=userFindOrCreate;
-
+ exports.getItem=getItem
 
 exports.getInfo = getInfo;
 
