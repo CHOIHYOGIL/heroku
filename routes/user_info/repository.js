@@ -26,7 +26,6 @@ function userFindOrCreate(uid, req) {
        user_name:req.name,
        user_nickname:req.nickname,
        user_password:req.password,
-  
        user_phone:req.phone
  
      }

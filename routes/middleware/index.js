@@ -18,6 +18,7 @@ function firebaseAuth(req, res, next) {
   console.log(token)
   
      authCheck(String(token))
+     console.log(token)
         .then(decodedToken => {
             let uid=decodedToken.uid;
              console.log("decodedToken: "+decodedToken)
