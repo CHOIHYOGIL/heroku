@@ -23,7 +23,7 @@ var home=require('./routes/home')
 var board=require('./routes/board')
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'pug');
-
+console.log(app.get('env'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
