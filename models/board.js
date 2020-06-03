@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull:false
     },
     board_email:{
-      type:DataTypes.STRING(10),
+      type:DataTypes.STRING(100),
       allowNull:false
     },  
 
