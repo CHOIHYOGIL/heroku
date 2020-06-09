@@ -59,6 +59,18 @@ function getUserContent(req, res) {
 
 }
 
+function getRemoveContent(req,res){
+
+  var title=req.body.title;
+  repository.removeFeed(title)
+  .then(result=>{
+    res.json({
+      status: "ok", message: "글작성 완료" 
+    })
+  })
+
+}
+
 exports.getWriteFeed = getWriteFeed
 
 exports.getAllData=getAllData

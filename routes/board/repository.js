@@ -88,7 +88,13 @@ function getUserInfo(uid) {
   })
 }
 
-
+function removeFeed(title){
+  return Board.destroy({
+    where:{
+      board_title : title
+    }
+  })
+}
 
 exports.getUseralldata = getUseralldata
 
