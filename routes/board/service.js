@@ -77,6 +77,7 @@ function getUpdateContent(req,res){
   var title=req.body.title;
   var content=req.body.content;
   var oldtitle=req.body.oldtitle;
+  console.log(oldtitle)
   repository.updateFeed(title,content,oldtitle)
   .then(result=>{
     res.json({
