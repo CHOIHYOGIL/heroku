@@ -80,7 +80,7 @@ let offset1=0;
 
 function getUserInfo(uid) {
 
-  return Board.findAll({
+  return board.findAll({
     where: {
       user_uid: uid
     },
@@ -89,7 +89,7 @@ function getUserInfo(uid) {
 }
 
 function removeFeed(title){
-  return Board.destroy({
+  return board.destroy({
     where:{
       board_title : title
     }

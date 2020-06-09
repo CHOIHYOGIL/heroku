@@ -62,6 +62,7 @@ function getUserContent(req, res) {
 function getRemoveContent(req,res){
 
   var title=req.body.title;
+  console.log(title);
   repository.removeFeed(title)
   .then(result=>{
     res.json({
