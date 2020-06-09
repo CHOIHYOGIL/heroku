@@ -97,7 +97,7 @@ function removeFeed(title){
 }
 
 exports.getUseralldata = getUseralldata
-
+exports.removeFeed=removeFeed
 exports.getUserInfo = getUserInfo
 exports.writeBoard = writeBoard
 exports.getUserFeed = getUserFeed

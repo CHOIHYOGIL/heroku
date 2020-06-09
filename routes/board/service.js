@@ -74,5 +74,5 @@ function getRemoveContent(req,res){
 exports.getWriteFeed = getWriteFeed
 
 exports.getAllData=getAllData
-
+exports.getRemoveContent=getRemoveContent
 exports.getUserContent=getUserContent
