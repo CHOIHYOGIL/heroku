@@ -66,7 +66,7 @@ function getRemoveContent(req,res){
   repository.removeFeed(title)
   .then(result=>{
     res.json({
-      status: "ok", message: "글작성 완료" 
+      status: "ok", message: "글삭제 완료" 
     })
   })
 
@@ -81,7 +81,7 @@ function getUpdateContent(req,res){
   repository.updateFeed(title,content,oldtitle)
   .then(result=>{
     res.json({
-      status: "ok", message: "글작성 완료" 
+      status: "ok", message: "글수정 완료" 
     })
   })
 }
