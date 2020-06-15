@@ -7,6 +7,10 @@ module.exports = (sequelize, DataTypes) => {
        allowNull:false,
        autoIncrement: true
     },
+    fish_nickname:{
+      type:DataTypes.STRING(50),
+      allowNull:false,
+    },
     fish_uid:{
       type:DataTypes.STRING,
       allowNull:false,

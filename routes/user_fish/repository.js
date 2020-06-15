@@ -34,11 +34,12 @@ function getFishInfo(page,keyword){
 
 }
 
-function saveFishInfo(uid,name, length, weight, lat, lon, fishing, comment){
+function saveFishInfo(uid,nickname,name, length, weight, lat, lon, fishing, comment){
 
    return user_fish.create({
 
       fish_uid: uid,
+      fish_nickname: nickname,
       fish_name: name,
       fish_length:length,
     fish_weight: weight,
