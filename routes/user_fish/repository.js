@@ -34,6 +34,15 @@ function getFishInfo(page,keyword){
 
 }
 
+function getUserFishInfo(nickname){
+
+   return user_fish.findAll({
+      where : {
+         fish_nickname :nickname
+      }
+   })
+}
+
 function saveFishInfo(uid,nickname,name, length, weight, lat, lon, fishing, comment){
 
    return user_fish.create({
@@ -51,6 +60,8 @@ function saveFishInfo(uid,nickname,name, length, weight, lat, lon, fishing, comm
   })
 
 }
+
+exports.getUserFishInfo=getUserFishInfo;
 
 exports.getFishInfo=getFishInfo;
 exports.saveFishInfo=saveFishInfo

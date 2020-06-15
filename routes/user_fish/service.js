@@ -35,6 +35,7 @@ function saveFish(req,res){
   var comment=req.body.comment
   var nickname=req.body.nickname
   console.log(lat)
+  console.log(nickname)
   console.log(lon)
 
   repository.saveFishInfo(uid,nickname,name, length, weight, lat, lon, fishing, comment);
@@ -42,6 +43,14 @@ function saveFish(req,res){
 
 function getUserFish(req,res){
 
+  var nickname=req.query.nickname;
+
+  repository.getUserFishInfo(nickname)
+  .then(result =>{
+    res.json({
+      user_fishBowl: result
+    })
+  })
 
 }
 exports.getUserFish=getUserFish
